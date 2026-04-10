@@ -1,120 +1,55 @@
 <template>
-  <v-row class="fill-height container">
-    <v-col cols="5" class="left">
-      <name />
-      <Nav />
-    </v-col>
-    <v-col class="right">
-      <about class="section" id="about-section"/>
-      <education class="section" id="education-section"/>
-      <experience class="section" id="experience-section"/>
-      <project class="section" id="featured-section"/>
-    </v-col>
-  </v-row>
+  <div class="fold-marks">
+    <div class="fold-h" style="top: 33.33%"></div>
+    <div class="fold-h" style="top: 66.66%"></div>
+    <div class="fold-v" style="left: 33.33%"></div>
+    <div class="fold-v" style="left: 66.66%"></div>
+  </div>
+
+  <div class="crosshair-h" ref="chH"></div>
+  <div class="crosshair-v" ref="chV"></div>
+  <div class="coord-display" ref="coord">X: 0000  Y: 0000</div>
+
+  <SectionNav />
+
+  <div class="content-area">
+    <div class="page">
+      <TitleBlock />
+      <EducationSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <RevisionBlock />
+    </div>
+  </div>
 </template>
 
 <script setup>
-  import Name from '@/components/Name.vue'
-  import Nav from '@/components/Nav.vue'
-  import About from '@/components/About.vue'
-  import Education from '@/components/Education.vue'
-  import Experience from '@/components/Experience.vue'
-  import Project from '@/components/Projects.vue'
-  import { onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import TitleBlock        from '@/components/TitleBlock.vue'
+import SectionNav        from '@/components/SectionNav.vue'
+import EducationSection  from '@/components/EducationSection.vue'
+import SkillsSection     from '@/components/SkillsSection.vue'
+import ExperienceSection from '@/components/ExperienceSection.vue'
+import ProjectsSection   from '@/components/ProjectsSection.vue'
+import RevisionBlock     from '@/components/RevisionBlock.vue'
 
-  var allSections = document.getElementsByClassName("section");
-  var navSections = document.querySelectorAll(".nav, .nav_selected");
+const chH   = ref(null)
+const chV   = ref(null)
+const coord = ref(null)
 
-  const onScroll = () => {
-    var scrollY = window.scrollY + screen.height * 0.3;
+function onMouseMove(e) {
+  chH.value.style.top  = e.clientY + 'px'
+  chV.value.style.left = e.clientX + 'px'
+  const x = String(Math.round(e.clientX)).padStart(4, '0')
+  const y = String(Math.round(e.clientY + window.scrollY)).padStart(4, '0')
+  coord.value.textContent = `X: ${x}  Y: ${y}`
+}
 
-    // console.log(scrollY)
-    // console.log(navSections.length)
-
-    for (var j = 0; j < allSections.length; j++) {
-      var sectionHeight = allSections[j].offsetHeight;
-      var sectionTop = allSections[j].offsetTop;
-      var navSection = document.getElementById("nav-" + allSections[j].id)
-
-      // console.log(sectionTop, sectionHeight)
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        if (!navSection.className.includes("nav_selected")) {
-          navSection.className += " nav_selected"
-        }
-      } else {
-        navSection.className = navSection.className.replace("nav_selected", "")
-      }
-    }
-  }
-
-  window.addEventListener("scroll", onScroll);
-
-  onMounted(() => {
-    var firstSection = document.getElementById("nav-" + allSections[0].id)
-    if (firstSection) {
-      if (!firstSection.className.includes("nav_selected")) {
-        firstSection.className += " nav_selected"
-      }
-    }
-  })
-  
-
+onMounted(() => {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+  window.scrollTo(0, 0)
+  document.addEventListener('mousemove', onMouseMove)
+})
+onUnmounted(() => document.removeEventListener('mousemove', onMouseMove))
 </script>
-
-<style scoped>
-  .container {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-</style>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Rubik&display=swap');
-
-
-html {
-  padding-left: 10vw;
-  padding-right: 10vw;
-  background-color: #1B262C;
-}
-
-* {
-  color: #BBE1FA;
-  /* font-family: 'Ubuntu', sans-serif; */
-  /* font-family: 'PT Sans', sans-serif; */
-  font-family: 'Barlow', sans-serif;
-}
-
-.left {
-  /* keep the left (name and nav) fixed while scrolling */
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  overflow: hidden;
-  background-color: #1B262C;
-}
-
-.right {
-  padding-top: 10vh;
-  padding-bottom: 5vh;
-  overflow-y: auto;
-  background-color: #1B262C;
-}
-
-.v-chip__content {
-  color: #96EFFF;
-  font-weight: 500;
-  filter: brightness(1.2)
-}
-
-.v-chip__underlay {
-  background-color: #96EFFF !important;
-  opacity: 0.2 !important;
-}
-
-.v-card {
-  border-radius: 10px !important;
-}
-</style>

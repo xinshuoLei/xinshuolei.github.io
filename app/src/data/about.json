@@ -1,0 +1,26 @@
+{
+  "name": "Xinshuo Lei",
+  "subtitle": "MSIM @ UW · CS @ UIUC · Software Engineer",
+  "docNumber": "SWE-001-XL",
+  "revision": "B",
+  "year": "2026",
+  "links": [
+    { "type": "email",    "label": "xslei@uw.edu",               "url": "mailto:xslei@uw.edu" },
+    { "type": "github",   "label": "github.com/xinshuoLei",       "url": "https://github.com/xinshuoLei" },
+    { "type": "linkedin", "label": "linkedin.com/in/xinshuo-lei", "url": "https://www.linkedin.com/in/xinshuo-lei" }
+  ],
+  "spec": [
+    { "param": "Location",          "value": "Seattle, WA 98105 — Remote capable" },
+    { "param": "Focus",             "value": "Software Engineering · Systems · AI & Agents · DevOps" },
+    { "param": "Design Philosophy", "value": "Moving fast means staying clean enough to keep moving." },
+    { "param": "Off-duty Ops",      "value": "Assembling metallic models · Speedcubing (sub-2min goal) · Mechanical keyboard acquisition" }
+  ],
+  "notes": [
+    "ENGINEER WITH A BACKGROUND SPANNING DISTRIBUTED SYSTEMS, AI AGENT DEVELOPMENT, AND APPLIED ML. COMFORTABLE OPERATING ACROSS THE STACK — FROM INFRASTRUCTURE TO PRODUCT.",
+    "INDUSTRY EXPERIENCE AT CCC INTELLIGENT SOLUTIONS ACROSS AI SYSTEMS, WEB DEVELOPMENT, AND CLOUD INFRASTRUCTURE. RESEARCH EXPERIENCE AT UIUC CSL.",
+    "PURSUING MSIM AT UW WITH FOCUS ON DATA SCIENCE AND CYBERSECURITY, BUILDING ON A COMPUTER SCIENCE FOUNDATION FROM UIUC."
+  ],
+  "revisions": [
+    { "rev": "1", "date": "2026-04", "author": "X. LEI" }
+  ]
+}

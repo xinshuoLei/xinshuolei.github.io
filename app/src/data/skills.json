@@ -1,0 +1,28 @@
+[
+  {
+    "group": "Languages",
+    "span": 2,
+    "items": ["Python", "JavaScript", "TypeScript", "Java", "C++", "Go / Golang", "HTML / CSS"]
+  },
+  {
+    "group": "Frontend",
+    "items": ["React", "Vue.js", "Node.js", "Express.js"]
+  },
+  {
+    "group": "Backend",
+    "items": ["Django", "FastAPI", "Flask"]
+  },
+  {
+    "group": "Data",
+    "items": ["PostgreSQL", "MySQL", "MongoDB"]
+  },
+  {
+    "group": "DevOps",
+    "items": ["Docker", "Kubernetes", "Linux", "GitHub Actions", "Pulumi", "Airflow", "Helm"]
+  },
+  {
+    "group": "AI / ML & Agents",
+    "span": 2,
+    "items": ["PyTorch", "CUDA", "LangChain", "LangGraph", "MCP Servers", "AWS Bedrock", "OpenTelemetry", "Arize Phoenix", "ClearML"]
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "PRJ-A",
+    "tag": "DISTRIBUTED SYSTEMS",
+    "name": "MapleJuice",
+    "date": "AUG 2023 — DEC 2023",
+    "screenshot": null,
+    "logo": null,
+    "skills": ["Go", "Distributed Systems", "Socket Programming"],
+    "description": [
+      "Simplified Go version of Hadoop MapReduce with an underlying distributed file system built from scratch.",
+      "Uses a gossip-based protocol for failure detection and membership management. Tolerates up to three consecutive node failures via file replication, and includes a distributed log querier serving 60MB+ files per node.",
+      "Benchmarked against Hadoop on join and filter workloads using clusters of up to 10 VMs."
+    ],
+    "highlights": ["Go", "Hadoop MapReduce", "gossip-based protocol", "failure detection", "file replication", "distributed log querier"],
+    "tags": ["LANG: GO", "PROTO: GOSSIP", "SCALE: 10 VMs", "FAULT TOLERANCE: 3 NODES"],
+    "links": []
+  },
+  {
+    "id": "PRJ-B",
+    "tag": "CUDA / HPC",
+    "name": "LeNet-5 Conv Layer Optimization",
+    "date": "AUG 2023 — DEC 2023",
+    "screenshot": "lenet.webp",
+    "logo": null,
+    "skills": ["CUDA", "C++", "Nsight Compute"],
+    "description": [
+      "Optimized the forward pass of convolutional layers in a modified LeNet-5 CNN using CUDA with various parallelization techniques.",
+      "Profiled on the Fashion MNIST dataset using Nsight Compute to identify and validate optimization gains against the CPU baseline implementation."
+    ],
+    "highlights": ["CUDA", "LeNet-5", "convolutional layers", "Fashion MNIST", "Nsight Compute", "parallelization"],
+    "tags": ["LANG: CUDA / C++", "DATASET: FASHION MNIST"],
+    "links": []
+  },
+  {
+    "id": "PRJ-C",
+    "tag": "FULL STACK",
+    "name": "OpenAlex Explorer",
+    "date": "MAY 2022 — AUG 2022",
+    "screenshot": "openalex.png",
+    "logo": null,
+    "skills": ["React", "PostgreSQL", "Express.js"],
+    "description": [
+      "Stored the OpenAlex dataset in PostgreSQL with optimized queries for fast retrieval.",
+      "Built an interactive React web application supporting dynamic search, faceted filtering, and responsive visualizations."
+    ],
+    "highlights": ["OpenAlex", "PostgreSQL", "React", "dynamic search", "faceted filtering"],
+    "tags": ["LANG: JS", "DB: POSTGRES"],
+    "links": [{ "display": "GitHub Repo", "url": "https://github.com/xinshuoLei/OpenAlex-Explorer" }]
+  }
+]

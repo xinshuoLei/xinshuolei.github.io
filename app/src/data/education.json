@@ -1,0 +1,59 @@
+[
+  {
+    "id": "EDU-01",
+    "tag": "CURRENT",
+    "degree": "Master of Science in Information Management",
+    "school": "University of Washington, Seattle",
+    "date": "SEP 2024 — JUN 2026 (Expected)",
+    "gpa": "3.99 / 4.00",
+    "logo": "uw.png",
+    "honors": null,
+    "subtitle": null,
+    "courses": [],
+    "tags": ["STATUS: IN PROGRESS", "SPEC: DATA SCIENCE", "SPEC: CYBERSECURITY"]
+  },
+  {
+    "id": "EDU-02",
+    "tag": "GRAD",
+    "degree": "Master of Computer Science",
+    "school": "University of Illinois at Urbana-Champaign",
+    "date": "AUG 2019 — MAY 2024",
+    "gpa": "4.00 / 4.00",
+    "logo": "uiuc.png",
+    "honors": null,
+    "subtitle": null,
+    "courses": [
+      "Distributed Systems",
+      "Advanced Distributed Systems",
+      "Applied Parallel Programming",
+      "Machine Learning + Database Systems",
+      "Computer System Organization",
+      "Cloud Networking",
+      "Software QA with Generative AI"
+    ],
+    "tags": ["FOCUS: SYSTEMS", "RA: PROF. TAREK ABDELZAHER"]
+  },
+  {
+    "id": "EDU-03",
+    "tag": "UNDERGRAD",
+    "degree": "Bachelor of Science in Computer Science",
+    "school": "University of Illinois at Urbana-Champaign",
+    "date": "AUG 2019 — MAY 2024",
+    "gpa": "4.00 / 4.00",
+    "logo": "uiuc.png",
+    "honors": null,
+    "subtitle": null,
+    "courses": [
+      "Database Systems",
+      "Web Development",
+      "System Programming",
+      "Artificial Intelligence",
+      "Computer Architecture",
+      "Algorithms & Model of Computation",
+      "Data Structures",
+      "Applied Machine Learning",
+      "Interactive Computer Graphics"
+    ],
+    "tags": ["GRADUATED WITH HIGHEST HONORS", "DEAN'S LIST: F2019–F2022"]
+  }
+]

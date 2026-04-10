@@ -1,0 +1,80 @@
+[
+  {
+    "id": "EXP-A",
+    "tag": "CCC",
+    "org": "CCC Intelligent Solutions",
+    "location": "Chicago, IL",
+    "logo": "ccc.png",
+    "fullWidth": true,
+    "roles": [
+      {
+        "title": "AI Engineer & DevOps Intern",
+        "date": "JUN 2025 — DEC 2025",
+        "bullets": [
+          "Architected a **LangGraph** AI governance agent on **AWS Bedrock**, delivering streaming responses via REST API and WebSocket for real-time frontend communication",
+          "Extended agent capabilities with **MCP servers** bridging to internal monitoring systems; instrumented the full stack with **OpenTelemetry** and **Arize Phoenix** for tracing and performance diagnostics",
+          "Managed containerized microservice deployments across **Docker**, **Kubernetes**, and CI/CD pipelines, reducing release overhead",
+          "Maintained **Airflow** deployment reliability on Kubernetes + **Helm**, proactively resolving issues before they impacted model training and data processing workflows"
+        ],
+        "stack": ["LangGraph", "AWS Bedrock", "MCP", "OpenTelemetry", "Arize Phoenix", "Docker", "Kubernetes", "Airflow", "Helm", "CI/CD"]
+      },
+      {
+        "title": "Software Engineering Intern",
+        "date": "JAN 2023 — AUG 2023",
+        "bullets": [
+          "Built an interactive **Vue.js** demo application showcasing the company's flagship AI engine to customers, directly supporting sales and product communication",
+          "Migrated legacy Okta authentication from Apigee to a **FastAPI** backend with role-based access control, hardening security for **Amazon S3** resources",
+          "Validated distributed training scalability with a **PyTorch** POC on **Kubernetes**, benchmarked with **ClearML**"
+        ],
+        "stack": ["Vue.js", "FastAPI", "PyTorch", "Kubernetes", "ClearML", "Okta"]
+      }
+    ],
+    "tags": [],
+    "links": [{ "display": "CCC Intelligent Solutions", "url": "https://www.cccis.com/" }]
+  },
+  {
+    "id": "EXP-B",
+    "tag": "CSL",
+    "org": "Coordinated Science Laboratory, University of Illinois",
+    "location": "Champaign, IL",
+    "logo": "csl.png",
+    "fullWidth": false,
+    "roles": [
+      {
+        "title": "Graduate Research Assistant",
+        "date": "AUG 2023 — MAY 2024",
+        "bullets": [
+          "Containerized ML models with **Docker** and built an end-to-end inference pipeline serving results through **Django**"
+        ],
+        "stack": ["Docker", "Django"]
+      },
+      {
+        "title": "Research Software Engineer",
+        "date": "MAY 2022 — JAN 2023",
+        "bullets": [
+          "Built **React** dashboards for visualizing public opinion and social media analytics, connecting to automated data post-processing pipelines in **Python**"
+        ],
+        "stack": ["React", "Python"]
+      }
+    ],
+    "tags": ["ADVISOR: PROF. ABDELZAHER"],
+    "links": [{ "display": "INCAS Project", "url": "https://incas.csl.illinois.edu/" }]
+  },
+  {
+    "id": "EXP-C",
+    "tag": "DEV",
+    "title": "Developer",
+    "org": "Caesar Research Group, University of Illinois",
+    "location": "Champaign, IL",
+    "date": "FEB 2022 — JAN 2023",
+    "logo": "uiuc.png",
+    "logoPadded": true,
+    "fullWidth": false,
+    "bullets": [
+      "Led full-stack development of an open-source computer networking library, building across **React**, **Express.js**, and **MongoDB** from the ground up"
+    ],
+    "stack": ["React", "Express.js", "MongoDB", "Node.js"],
+    "tags": ["SCOPE: OSS"],
+    "links": [{ "display": "OLCN", "url": "http://openlibrary.cs.illinois.edu" }]
+  }
+]
