@@ -28,14 +28,25 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useLocale } from '@/composables/useLocale'
 
-const items = [
-  { id: 'education',  label: 'Education' },
-  { id: 'skills',     label: 'Skills' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects',   label: 'Projects' },
-]
+const { locale } = useLocale()
+
+const items = computed(() => locale.value === 'zh'
+  ? [
+      { id: 'education',  label: '教育' },
+      { id: 'skills',     label: '技能' },
+      { id: 'experience', label: '经历' },
+      { id: 'projects',   label: '项目' },
+    ]
+  : [
+      { id: 'education',  label: 'Education' },
+      { id: 'skills',     label: 'Skills' },
+      { id: 'experience', label: 'Experience' },
+      { id: 'projects',   label: 'Projects' },
+    ]
+)
 
 const activeSection = ref('')
 const scrollPct     = ref(0)
@@ -53,7 +64,7 @@ function onScroll() {
   const containerTop = c ? c.getBoundingClientRect().top : 0
 
   let found = false
-  for (const item of [...items].reverse()) {
+  for (const item of [...items.value].reverse()) {
     const el = document.getElementById(item.id)
     if (el) {
       const elTop = scrollTop + el.getBoundingClientRect().top - containerTop

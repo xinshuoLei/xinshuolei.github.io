@@ -1,0 +1,80 @@
+[
+  {
+    "id": "EXP-A",
+    "tag": "CCC",
+    "org": "CCC Intelligent Solutions",
+    "location": "伊利诺伊州，芝加哥",
+    "logo": "ccc.png",
+    "fullWidth": true,
+    "roles": [
+      {
+        "title": "AI 工程师与 DevOps 实习生",
+        "date": "2025年6月 — 2025年12月",
+        "bullets": [
+          "在 **AWS Bedrock** 上设计基于 **LangGraph** 的 AI 治理智能体，通过 REST API 和 WebSocket 提供流式响应，实现前端实时通信",
+          "通过 **MCP 服务器**扩展智能体能力，接入内部监控系统；使用 **OpenTelemetry** 和 **Arize Phoenix** 对全栈进行埋点，支持链路追踪与性能诊断",
+          "管理 **Docker**、**Kubernetes** 及 CI/CD 流水线上的容器化微服务部署，降低发布开销",
+          "维护 Kubernetes + **Helm** 上 **Airflow** 的部署可靠性，主动排查并解决问题，防止影响模型训练与数据处理流程"
+        ],
+        "stack": ["LangGraph", "AWS Bedrock", "MCP", "OpenTelemetry", "Arize Phoenix", "Docker", "Kubernetes", "Airflow", "Helm", "CI/CD"]
+      },
+      {
+        "title": "软件工程实习生",
+        "date": "2023年1月 — 2023年8月",
+        "bullets": [
+          "开发基于 **Vue.js** 的交互式演示应用，向客户展示公司旗舰 AI 引擎，直接支持销售与产品沟通",
+          "将旧有 Okta 认证从 Apigee 迁移至基于 **FastAPI** 的后端，引入基于角色的访问控制，强化 **Amazon S3** 资源安全性",
+          "使用 **PyTorch** 在 **Kubernetes** 上完成分布式训练可扩展性 POC 验证，并通过 **ClearML** 进行基准测试"
+        ],
+        "stack": ["Vue.js", "FastAPI", "PyTorch", "Kubernetes", "ClearML", "Okta"]
+      }
+    ],
+    "tags": [],
+    "links": [{ "display": "CCC Intelligent Solutions", "url": "https://www.cccis.com/" }]
+  },
+  {
+    "id": "EXP-B",
+    "tag": "CSL",
+    "org": "Coordinated Science Laboratory, 伊利诺伊大学",
+    "location": "伊利诺伊州，香槟",
+    "logo": "csl.png",
+    "fullWidth": false,
+    "roles": [
+      {
+        "title": "研究生研究助理",
+        "date": "2023年8月 — 2024年5月",
+        "bullets": [
+          "使用 **Docker** 容器化机器学习模型，构建端到端推理流水线，通过 **Django** 对外提供推理服务"
+        ],
+        "stack": ["Docker", "Django"]
+      },
+      {
+        "title": "研究软件工程师",
+        "date": "2022年5月 — 2023年1月",
+        "bullets": [
+          "基于 **React** 构建用于可视化公众舆论与社交媒体分析的仪表盘，对接 **Python** 自动化数据后处理流水线"
+        ],
+        "stack": ["React", "Python"]
+      }
+    ],
+    "tags": ["导师：Abdelzaher 教授"],
+    "links": [{ "display": "INCAS 项目", "url": "https://incas.csl.illinois.edu/" }]
+  },
+  {
+    "id": "EXP-C",
+    "tag": "DEV",
+    "title": "全栈开发者",
+    "org": "Caesar Research Group, 伊利诺伊大学",
+    "location": "伊利诺伊州，香槟",
+    "date": "2022年2月 — 2023年1月",
+    "logo": "uiuc.png",
+    "logoPadded": true,
+    "fullWidth": false,
+    "bullets": [
+      "主导 **OLCN** 全栈开发，从零搭建 **React**、**Express.js** 与 **MongoDB** 技术栈"
+    ],
+    "stack": ["React", "Express.js", "MongoDB", "Node.js"],
+    "tags": ["性质：开源"],
+    "links": [{ "display": "OLCN", "url": "http://openlibrary.cs.illinois.edu" }]
+  }
+]

@@ -11,6 +11,7 @@
   <div class="coord-display" ref="coord">X: 0000  Y: 0000</div>
 
   <SectionNav />
+  <LangToggle />
 
   <div class="content-area">
     <div class="page">
@@ -28,6 +29,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import TitleBlock        from '@/components/TitleBlock.vue'
 import SectionNav        from '@/components/SectionNav.vue'
+import LangToggle        from '@/components/LangToggle.vue'
 import EducationSection  from '@/components/EducationSection.vue'
 import SkillsSection     from '@/components/SkillsSection.vue'
 import ExperienceSection from '@/components/ExperienceSection.vue'

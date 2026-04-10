@@ -1,6 +1,6 @@
 <template>
   <div class="changelog">
-    <span class="changelog-label">CHANGELOG</span>
+    <span class="changelog-label">{{ ui.label }}</span>
     <div class="changelog-entries">
       <div v-for="row in about.revisions" :key="row.rev" class="changelog-entry">
         <span class="cl-rev">REV {{ row.rev }}</span>
@@ -14,5 +14,15 @@
 </template>
 
 <script setup>
-import about from '@/data/about.json'
+import { computed } from 'vue'
+import { useLocale } from '@/composables/useLocale'
+import aboutEn from '@/data/about.json'
+import aboutZh from '@/data/about.zh.json'
+
+const { locale } = useLocale()
+const about = computed(() => locale.value === 'zh' ? aboutZh : aboutEn)
+const ui = computed(() => locale.value === 'zh'
+  ? { label: '修订记录' }
+  : { label: 'CHANGELOG' }
+)
 </script>

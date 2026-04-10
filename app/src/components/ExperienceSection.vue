@@ -2,7 +2,7 @@
   <div class="schematic-section" id="experience">
     <div class="section-header">
       <span class="section-number">SEC. 3.0</span>
-      <span class="section-title">Work Experience</span>
+      <span class="section-title">{{ ui.title }}</span>
       <div class="section-rule"></div>
       <span class="section-ref">REF: EXP-A — EXP-C</span>
     </div>
@@ -77,7 +77,17 @@
 </template>
 
 <script setup>
-import experience from '@/data/experience.json'
+import { computed } from 'vue'
+import { useLocale } from '@/composables/useLocale'
+import experienceEn from '@/data/experience.json'
+import experienceZh from '@/data/experience.zh.json'
+
+const { locale } = useLocale()
+const experience = computed(() => locale.value === 'zh' ? experienceZh : experienceEn)
+const ui = computed(() => locale.value === 'zh'
+  ? { title: '运行记录' }
+  : { title: 'Work Experience' }
+)
 
 const base = import.meta.env.BASE_URL
 

@@ -2,7 +2,7 @@
   <div class="schematic-section" id="skills">
     <div class="section-header">
       <span class="section-number">SEC. 2.0</span>
-      <span class="section-title">Component Inventory</span>
+      <span class="section-title">{{ ui.title }}</span>
       <div class="section-rule"></div>
       <span class="section-ref">REF: SKL-01 — SKL-N</span>
     </div>
@@ -19,5 +19,15 @@
 </template>
 
 <script setup>
-import skills from '@/data/skills.json'
+import { computed } from 'vue'
+import { useLocale } from '@/composables/useLocale'
+import skillsEn from '@/data/skills.json'
+import skillsZh from '@/data/skills.zh.json'
+
+const { locale } = useLocale()
+const skills = computed(() => locale.value === 'zh' ? skillsZh : skillsEn)
+const ui = computed(() => locale.value === 'zh'
+  ? { title: '零件清单' }
+  : { title: 'Component Inventory' }
+)
 </script>

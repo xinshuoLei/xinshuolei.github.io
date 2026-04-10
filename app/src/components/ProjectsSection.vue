@@ -2,7 +2,7 @@
   <div class="schematic-section" id="projects">
     <div class="section-header">
       <span class="section-number">SEC. 4.0</span>
-      <span class="section-title">Assembly Drawings</span>
+      <span class="section-title">{{ ui.title }}</span>
       <div class="section-rule"></div>
       <span class="section-ref">REF: PRJ-A — PRJ-C</span>
     </div>
@@ -44,14 +44,24 @@
     </div>
 
     <div class="note">
-      <div class="note-label">NOTES</div>
-      1. ADDITIONAL PROJECTS AVAILABLE AT GITHUB.COM/XINSHUOLEI.
+      <div class="note-label">{{ ui.notesLabel }}</div>
+      1. {{ ui.additionalProjects }}
     </div>
   </div>
 </template>
 
 <script setup>
-import projects from '@/data/projects.json'
+import { computed } from 'vue'
+import { useLocale } from '@/composables/useLocale'
+import projectsEn from '@/data/projects.json'
+import projectsZh from '@/data/projects.zh.json'
+
+const { locale } = useLocale()
+const projects = computed(() => locale.value === 'zh' ? projectsZh : projectsEn)
+const ui = computed(() => locale.value === 'zh'
+  ? { title: '施工日志', notesLabel: '注记', additionalProjects: '更多施工记录见 GITHUB.COM/XINSHUOLEI。' }
+  : { title: 'Build Log', notesLabel: 'NOTES', additionalProjects: 'ADDITIONAL ENTRIES AVAILABLE AT GITHUB.COM/XINSHUOLEI.' }
+)
 
 const screenshots = import.meta.glob('@/assets/*', { eager: true, import: 'default' })
 

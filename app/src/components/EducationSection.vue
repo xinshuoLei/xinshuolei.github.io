@@ -2,7 +2,7 @@
   <div class="schematic-section" id="education">
     <div class="section-header">
       <span class="section-number">SEC. 1.0</span>
-      <span class="section-title">Calibration History</span>
+      <span class="section-title">{{ ui.title }}</span>
       <div class="section-rule"></div>
       <span class="section-ref">REF: EDU-01/02/03</span>
     </div>
@@ -37,7 +37,7 @@
         <div v-if="edu.honors" class="comp-honors">{{ edu.honors }}</div>
 
         <div v-if="edu.specializations && edu.specializations.length" class="comp-subtitle" style="margin-bottom: 6px">
-          Specializations: {{ edu.specializations.join(' · ') }}
+          {{ ui.specializations }}{{ edu.specializations.join(' · ') }}
         </div>
 
         <ul v-if="edu.courses && edu.courses.length" class="comp-body comp-body--courses">
@@ -53,7 +53,17 @@
 </template>
 
 <script setup>
-import education from '@/data/education.json'
+import { computed } from 'vue'
+import { useLocale } from '@/composables/useLocale'
+import educationEn from '@/data/education.json'
+import educationZh from '@/data/education.zh.json'
+
+const { locale } = useLocale()
+const education = computed(() => locale.value === 'zh' ? educationZh : educationEn)
+const ui = computed(() => locale.value === 'zh'
+  ? { title: '校准记录', specializations: '方向：' }
+  : { title: 'Calibration History', specializations: 'Specializations: ' }
+)
 
 const base = import.meta.env.BASE_URL
 

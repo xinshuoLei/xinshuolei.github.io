@@ -1,0 +1,28 @@
+[
+  {
+    "group": "编程语言",
+    "span": 2,
+    "items": ["Python", "JavaScript", "TypeScript", "Java", "C++", "Go / Golang", "HTML / CSS"]
+  },
+  {
+    "group": "前端",
+    "items": ["React", "Vue.js", "Node.js", "Express.js"]
+  },
+  {
+    "group": "后端",
+    "items": ["Django", "FastAPI", "Flask"]
+  },
+  {
+    "group": "数据库",
+    "items": ["PostgreSQL", "MySQL", "MongoDB"]
+  },
+  {
+    "group": "运维",
+    "items": ["Docker", "Kubernetes", "Linux", "GitHub Actions", "Pulumi", "Airflow", "Helm"]
+  },
+  {
+    "group": "AI / 机器学习与智能体",
+    "span": 2,
+    "items": ["PyTorch", "CUDA", "LangChain", "LangGraph", "MCP Servers", "AWS Bedrock", "OpenTelemetry", "Arize Phoenix", "ClearML"]
+  }
+]

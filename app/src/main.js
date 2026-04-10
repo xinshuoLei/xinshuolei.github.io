@@ -7,7 +7,8 @@ import '@/styles/main.scss'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', component: Home }
+    { path: '/',   component: Home },
+    { path: '/zh', component: Home },
   ],
 })
 

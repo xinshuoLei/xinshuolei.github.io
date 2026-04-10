@@ -1,0 +1,26 @@
+{
+  "name": "雷昕硕",
+  "subtitle": "华盛顿大学信息管理硕士 · 伊利诺伊大学计算机科学 · 软件工程师",
+  "docNumber": "SWE-001-XL",
+  "revision": "B",
+  "year": "2026",
+  "links": [
+    { "type": "email",    "label": "xslei@uw.edu",               "url": "mailto:xslei@uw.edu" },
+    { "type": "github",   "label": "github.com/xinshuoLei",       "url": "https://github.com/xinshuoLei" },
+    { "type": "linkedin", "label": "linkedin.com/in/xinshuo-lei", "url": "https://www.linkedin.com/in/xinshuo-lei" }
+  ],
+  "spec": [
+    { "param": "坐标",     "value": "西雅图，WA 98105 — 支持远程" },
+    { "param": "主要规格", "value": "软件工程 · 系统 · AI 与智能体 · DevOps" },
+    { "param": "设计理念", "value": "能走得快，前提是随时都走得动。" },
+    { "param": "待机例程", "value": "组装金属模型 · 速拧魔方（目标 2 分钟内）· 购置机械键盘" }
+  ],
+  "notes": [
+    "工程师。背景覆盖分布式系统、AI 智能体开发及应用机器学习。全栈兼容，工作范围：基础设施层至产品层。",
+    "行业经验：CCC Intelligent Solutions，涵盖 AI 系统、Web 开发及云基础设施。科研经验：伊利诺伊大学计算机科学实验室。",
+    "在读规格：华盛顿大学信息管理硕士，专注数据科学与网络安全。基础规格：伊利诺伊大学计算机科学。"
+  ],
+  "revisions": [
+    { "rev": "1", "date": "2026-04", "author": "雷昕硕" }
+  ]
+}

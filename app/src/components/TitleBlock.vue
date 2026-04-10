@@ -42,19 +42,19 @@
 
     <div class="tb-meta">
       <div class="tb-meta-cell">
-        <span class="tb-label">Document No.</span>
+        <span class="tb-label">{{ ui.docNo }}</span>
         <div class="tb-value">{{ about.docNumber }}</div>
       </div>
       <div class="tb-meta-cell">
-        <span class="tb-label">Sheet</span>
-        <div class="tb-value">1 of 1</div>
+        <span class="tb-label">{{ ui.sheet }}</span>
+        <div class="tb-value">{{ ui.sheetVal }}</div>
       </div>
       <div class="tb-meta-cell">
-        <span class="tb-label">Scale</span>
+        <span class="tb-label">{{ ui.scale }}</span>
         <div class="tb-value">1 : 1</div>
       </div>
       <div class="tb-meta-cell">
-        <span class="tb-label">Tolerance</span>
+        <span class="tb-label">{{ ui.tolerance }}</span>
         <div class="tb-value">± 0.01</div>
       </div>
     </div>
@@ -65,7 +65,7 @@
     </div>
 
     <div class="tb-notes">
-      <span class="tb-notes-label">DESIGN NOTES</span>
+      <span class="tb-notes-label">{{ ui.designNotes }}</span>
       <div v-for="(note, i) in about.notes" :key="i">{{ i + 1 }}. {{ note }}</div>
     </div>
 
@@ -73,5 +73,16 @@
 </template>
 
 <script setup>
-import about from '@/data/about.json'
+import { computed } from 'vue'
+import { useLocale } from '@/composables/useLocale'
+import aboutEn from '@/data/about.json'
+import aboutZh from '@/data/about.zh.json'
+
+const { locale } = useLocale()
+const about = computed(() => locale.value === 'zh' ? aboutZh : aboutEn)
+
+const ui = computed(() => locale.value === 'zh'
+  ? { docNo: '文件编号', sheet: '页数', sheetVal: '第 1 页，共 1 页', scale: '比例', tolerance: '公差', designNotes: '设计注记' }
+  : { docNo: 'Document No.', sheet: 'Sheet', sheetVal: '1 of 1', scale: 'Scale', tolerance: 'Tolerance', designNotes: 'DESIGN NOTES' }
+)
 </script>

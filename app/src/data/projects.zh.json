@@ -1,0 +1,51 @@
+[
+  {
+    "id": "PRJ-A",
+    "tag": "分布式系统",
+    "name": "MapleJuice",
+    "date": "2023年8月 — 2023年12月",
+    "screenshot": null,
+    "logo": null,
+    "skills": ["Go", "Distributed Systems", "Socket Programming"],
+    "description": [
+      "基于 Go 的简化版 Hadoop MapReduce，底层分布式文件系统从零构建。",
+      "基于 gossip 协议实现故障检测与成员管理，通过文件多副本容忍最多三次连续节点故障，并内置分布式日志查询器，单节点可处理 60MB 以上的文件。",
+      "在最多 10 台虚拟机组成的集群上，与 Hadoop 进行了 Join 和 Filter 负载的基准测试对比。"
+    ],
+    "highlights": ["Go", "Hadoop MapReduce", "gossip", "故障检测", "文件多副本", "分布式日志查询器"],
+    "tags": ["语言：GO", "协议：GOSSIP", "规模：10 VMs", "容错：3 节点"],
+    "links": []
+  },
+  {
+    "id": "PRJ-B",
+    "tag": "CUDA / 高性能计算",
+    "name": "LeNet-5 卷积层优化",
+    "date": "2023年8月 — 2023年12月",
+    "screenshot": "lenet.webp",
+    "logo": null,
+    "skills": ["CUDA", "C++", "Nsight Compute"],
+    "description": [
+      "使用 CUDA 结合多种并行化技术，对改进版 LeNet-5 CNN 卷积层的前向传播进行性能优化。",
+      "在 Fashion MNIST 数据集上使用 Nsight Compute 进行 Profiling，量化并验证了相对 CPU 基线的提升效果。"
+    ],
+    "highlights": ["CUDA", "LeNet-5", "卷积层", "Fashion MNIST", "Nsight Compute", "并行化"],
+    "tags": ["语言：CUDA / C++", "数据集：FASHION MNIST"],
+    "links": []
+  },
+  {
+    "id": "PRJ-C",
+    "tag": "全栈",
+    "name": "OpenAlex 探索器",
+    "date": "2022年5月 — 2022年8月",
+    "screenshot": "openalex.png",
+    "logo": null,
+    "skills": ["React", "PostgreSQL", "Express.js"],
+    "description": [
+      "将 OpenAlex 数据集导入 PostgreSQL，通过索引与查询优化实现高效检索。",
+      "构建交互式 React Web 应用，支持动态搜索、多维筛选与响应式数据可视化。"
+    ],
+    "highlights": ["OpenAlex", "PostgreSQL", "React", "动态搜索", "多维筛选"],
+    "tags": ["语言：JS", "数据库：POSTGRES"],
+    "links": [{ "display": "GitHub 仓库", "url": "https://github.com/xinshuoLei/OpenAlex-Explorer" }]
+  }
+]
