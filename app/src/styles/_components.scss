@@ -80,7 +80,7 @@
 
 .snav-header {
   display: flex; align-items: center; gap: 8px;
-  padding: 10px 0 10px 13px;
+  padding: 10px 12px 10px 13px;
   border-bottom: 1px solid rgba(91, 200, 245, 0.14);
   white-space: nowrap;
 }
@@ -157,6 +157,86 @@
   }
 }
 
+// gear sits in the top-right of snav-wrap, outside section-nav (no clip-path here)
+.snav-gear {
+  position: absolute;
+  top: 0; right: 0;
+  height: 37px; // matches snav-header height on desktop
+  padding: 0 12px;
+  background: none; border: none;
+  display: flex; align-items: center;
+  cursor: pointer; opacity: 0.7;
+  transition: opacity 0.2s;
+  color: $accent; z-index: 2;
+
+  &:hover { opacity: 1; }
+  &.open  { opacity: 1; }
+
+  svg { width: 18px; height: 18px; }
+}
+
+.snav-settings {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.25s ease, opacity 0.2s;
+
+  // matches section-nav visual language
+  background: rgba(91, 200, 245, 0.04);
+  border: 1px solid rgba(91, 200, 245, 0.72);
+  border-right: none;
+  border-top: none;
+
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    14px 100%,
+    0% calc(100% - 14px)
+  );
+
+  &.open {
+    max-height: 80px;
+    opacity: 1;
+  }
+}
+
+.snav-settings-label {
+  font-size: 10px; color: $text-faint;
+  letter-spacing: 3px; text-transform: uppercase;
+  padding: 10px 13px 4px;
+  border-bottom: 1px solid rgba(91, 200, 245, 0.14);
+  margin-bottom: 2px;
+}
+
+.snav-settings-row {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 13px 12px;
+}
+
+.snav-opt {
+  background: none; border: none; padding: 2px 0;
+  font-family: $font-mono; font-size: 12px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: $text-faint; cursor: pointer;
+  width: 32px; text-align: center;
+  transition: color 0.15s;
+
+  &:hover { color: $text-dim; }
+  &.active { color: $accent; }
+}
+
+.snav-opt-sep {
+  font-size: 10px; color: $line-dim;
+}
+
+@keyframes nav-light-sweep {
+  0%   { transform: translateX(0);     opacity: 0; }
+  5%   { opacity: 1; }
+  75%  { opacity: 0.85; }
+  100% { transform: translateX(600px); opacity: 0; }
+}
+
 @keyframes snav-pulse {
   0%, 100% { opacity: 1;   box-shadow: 0 0 6px $accent; }
   50%       { opacity: 0.2; box-shadow: none; }
@@ -230,7 +310,7 @@
   // ── metadata row ──
   .tb-meta {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     border-bottom: 1px solid $line-dim;
 
     .tb-meta-cell {
@@ -239,6 +319,7 @@
 
       &:last-child { border-right: none; }
     }
+
   }
 
   .tb-label {
@@ -693,11 +774,26 @@
     flex-shrink: 0;
   }
 
+  // gear aligns with the 44px top bar height
+  .snav-gear { height: 44px; }
+
+  // settings drops below the top bar as an absolute panel
+  .snav-settings {
+    position: absolute;
+    top: 44px; left: 0;
+    z-index: 20;
+    width: 160px;
+    clip-path: none;
+    border-top: none;
+    border-left: 1px solid rgba(91, 200, 245, 0.72);
+  }
+
   .section-nav {
     width: 100%;
     flex-direction: row;
     align-items: center;
     height: 44px;
+    padding-right: 44px; // reserve space for the gear
 
     // Same diagonal-cut language as the side panel, applied to bottom corners
     clip-path: polygon(
@@ -757,12 +853,74 @@
 }
 
 // ── NAV: MOBILE SIMPLIFICATION ───────────────────────────────
+// inline lang switcher — only used on mobile, hidden everywhere else
+.snav-lang-inline { display: none; }
+
+// spacer — only active on mobile to balance the gear
+.snav-spacer { display: none; }
+
 @media (max-width: 640px) {
   .snav-header  { display: none; }
   .snav-footer  { display: none; }
   .snav-idx     { display: none; }
   .snav-item    { padding: 0 10px; }
-  .section-nav  { justify-content: center; }
+
+  // symmetric padding = gear width on both sides → items truly centered
+  // gear stays position: absolute (from base) overlapping the right padding zone
+  .section-nav  { justify-content: center; padding: 0 38px; overflow: hidden; }
+
+  // spacer not needed — symmetric padding handles centering
+  .snav-spacer { display: none; }
+
+  // gear: keep absolute positioning, just tighten padding
+  .snav-gear { padding: 0 10px; }
+
+  // hide desktop dropdown on mobile
+  .snav-settings { display: none !important; }
+
+  // light-sweep pseudo: a thin bright band that races across the panel on toggle
+  .section-nav::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, rgba(91, 200, 245, 0.55), transparent);
+    left: -60px;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+  }
+  .section-nav.sweeping::after {
+    animation: nav-light-sweep 0.7s ease-in-out forwards;
+  }
+
+  // nav items: clip out toward the right as sweep passes
+  .snav-item {
+    transition: clip-path 0.2s ease-in, opacity 0.2s ease-in;
+  }
+  .settings-open .snav-item {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  // lang switcher: overlays items absolutely, clips in from left after sweep
+  .snav-lang-inline {
+    position: absolute;
+    left: 38px; top: 0; bottom: 0; right: 38px;
+    display: flex; align-items: center; gap: 8px;
+    justify-content: center;
+    clip-path: inset(0 0 0 100%);
+    opacity: 0;
+    transition: clip-path 0.2s ease-out 0.2s, opacity 0.2s ease-out 0.2s;
+    pointer-events: none;
+  }
+  .settings-open .snav-lang-inline {
+    clip-path: inset(0 0% 0 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 // ── RESPONSIVE ───────────────────────────────────────────────
@@ -790,7 +948,7 @@
       justify-content: center; padding: 12px 16px;
     }
 
-    .tb-meta { grid-template-columns: 1fr 1fr; }
+    .tb-meta { grid-template-columns: 1fr 1fr 1fr; }
 
     .tb-spec-row  { grid-template-columns: 1fr; }
     .tb-spec-param {

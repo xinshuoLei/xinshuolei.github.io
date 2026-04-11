@@ -8,6 +8,9 @@ yarn build
 
 cd dist
 
+cp index.html 404.html
+echo "xlei.net" > CNAME
+
 rm -rf .git
 git init
 git add -A

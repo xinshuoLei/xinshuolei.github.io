@@ -8,8 +8,10 @@ export function useLocale() {
   const locale = computed(() => route.path === '/zh' ? 'zh' : 'en')
 
   function setLocale(l) {
+    const target = l === 'zh' ? '/zh' : '/'
+    if (route.path === target) return
     document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en'
-    router.push(l === 'zh' ? '/zh' : '/')
+    router.push(target)
   }
 
   return { locale, setLocale }

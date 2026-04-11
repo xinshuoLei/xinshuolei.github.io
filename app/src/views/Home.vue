@@ -11,30 +11,33 @@
   <div class="coord-display" ref="coord">X: 0000  Y: 0000</div>
 
   <SectionNav />
-  <LangToggle />
 
   <div class="content-area">
-    <div class="page">
-      <TitleBlock />
-      <EducationSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <RevisionBlock />
-    </div>
+    <Transition name="locale-fade" mode="out-in">
+      <div :key="locale" class="page">
+        <TitleBlock />
+        <EducationSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <RevisionBlock />
+      </div>
+    </Transition>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useLocale } from '@/composables/useLocale'
 import TitleBlock        from '@/components/TitleBlock.vue'
 import SectionNav        from '@/components/SectionNav.vue'
-import LangToggle        from '@/components/LangToggle.vue'
 import EducationSection  from '@/components/EducationSection.vue'
 import SkillsSection     from '@/components/SkillsSection.vue'
 import ExperienceSection from '@/components/ExperienceSection.vue'
 import ProjectsSection   from '@/components/ProjectsSection.vue'
 import RevisionBlock     from '@/components/RevisionBlock.vue'
+
+const { locale } = useLocale()
 
 const chH   = ref(null)
 const chV   = ref(null)
@@ -55,3 +58,20 @@ onMounted(() => {
 })
 onUnmounted(() => document.removeEventListener('mousemove', onMouseMove))
 </script>
+
+<style scoped>
+.locale-fade-leave-active {
+  transition: opacity 0.25s ease-in, transform 0.25s ease-in;
+}
+.locale-fade-enter-active {
+  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+}
+.locale-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+.locale-fade-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+</style>

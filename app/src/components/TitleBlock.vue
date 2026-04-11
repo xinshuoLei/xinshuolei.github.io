@@ -57,6 +57,10 @@
         <span class="tb-label">{{ ui.tolerance }}</span>
         <div class="tb-value">± 0.01</div>
       </div>
+      <div class="tb-meta-cell">
+        <span class="tb-label">LANG</span>
+        <div class="tb-value">{{ locale === 'zh' ? 'ZH' : 'EN' }}</div>
+      </div>
     </div>
 
     <div v-for="row in about.spec" :key="row.param" class="tb-spec-row">
