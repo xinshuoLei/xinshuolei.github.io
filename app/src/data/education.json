@@ -17,7 +17,7 @@
     "tag": "GRAD",
     "degree": "Master of Computer Science",
     "school": "University of Illinois at Urbana-Champaign",
-    "date": "AUG 2019 — MAY 2024",
+    "date": "AUG 2023 — MAY 2024",
     "gpa": "4.00 / 4.00",
     "logo": "uiuc.png",
     "honors": null,
@@ -31,14 +31,14 @@
       "Cloud Networking",
       "Software QA with Generative AI"
     ],
-    "tags": ["FOCUS: SYSTEMS", "RA: PROF. TAREK ABDELZAHER"]
+    "tags": ["5-YR B.S./M.C.S. PROGRAM", "FOCUS: SYSTEMS", "RA: PROF. TAREK ABDELZAHER"]
   },
   {
     "id": "EDU-03",
     "tag": "UNDERGRAD",
     "degree": "Bachelor of Science in Computer Science",
     "school": "University of Illinois at Urbana-Champaign",
-    "date": "AUG 2019 — MAY 2024",
+    "date": "AUG 2019 — MAY 2023",
     "gpa": "4.00 / 4.00",
     "logo": "uiuc.png",
     "honors": null,
@@ -54,6 +54,6 @@
       "Applied Machine Learning",
       "Interactive Computer Graphics"
     ],
-    "tags": ["GRADUATED WITH HIGHEST HONORS", "DEAN'S LIST: F2019–F2022"]
+    "tags": ["5-YR B.S./M.C.S. PROGRAM", "GRADUATED WITH HIGHEST HONORS", "DEAN'S LIST: F2019–F2022"]
   }
 ]

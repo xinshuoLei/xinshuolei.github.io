@@ -33,7 +33,7 @@
 .snav-wrap {
   position: fixed; top: 50%; right: 0;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 200;
 
   // Tight single shadow — makes the border look lit, not blooming
   filter: drop-shadow(0 0 2px rgba(91, 200, 245, 0.95));
@@ -367,6 +367,7 @@
   .tb-contact-link {
     display: flex; align-items: center; gap: 8px;
     font-size: 14px; color: $accent; letter-spacing: 1px;
+    text-transform: uppercase;
     text-decoration: none; transition: opacity 0.15s;
 
     &:hover { opacity: 0.7; }
@@ -395,6 +396,7 @@
 // ── SCHEMATIC SECTION ────────────────────────────────────────
 .schematic-section {
   margin-bottom: 56px; position: relative;
+  scroll-margin-top: 32px;
 
   &::before, &::after {
     content: ''; position: absolute;
